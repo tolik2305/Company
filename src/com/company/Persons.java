@@ -23,7 +23,7 @@ public class Persons {
 
     public  void print(){
         for (int i=0;i<this.list.length;i++){
-            System.out.println("Ф.И.О.: "+this.list[i].fullName +'\n'+ "Номер: "+this.list[i].number +'\n'+ "Домашний адресс: "+this.list[i].adress + 'n'+"Сумма вклада: "+ this.list[i].price + '\n' +"На какой срок: " +this.list[i].mounth + '\n');
+            System.out.println("Ф.И.О.: "+this.list[i].fullName +'\n'+ "Номер: "+ (i+1) +'\n'+ "Домашний адресс: "+this.list[i].adress + '\n'+"Сумма вклада: "+ this.list[i].price + '\n' +"На какой срок: " +this.list[i].mounth + '\n');
         }
         backToMenu();
     }
@@ -35,7 +35,7 @@ public class Persons {
             if(this.list[i].fullName!=null) {
                 if (this.list[i].fullName.contains(Surname)) {
                     isFounded = true;
-                    System.out.println("Ф.И.О.: "+this.list[i].fullName +'\n'+ "Номер: "+this.list[i].number +'\n'+ "Домашний адресс: "+this.list[i].adress + 'n'+"Сумма вклада: "+ this.list[i].price + '\n' +"На какой срок: " +this.list[i].mounth + '\n');
+                    System.out.println("Ф.И.О.: "+this.list[i].fullName +'\n'+ "Номер: "+ (i+1) +'\n'+ "Домашний адресс: "+this.list[i].adress + '\n'+"Сумма вклада: "+ this.list[i].price + '\n' +"На какой срок: " +this.list[i].mounth + '\n');
                 }
             }
             else if(i == this.list.length -1&&!isFounded)
@@ -48,7 +48,7 @@ public class Persons {
         price = scanner.next();
         for (int i = 10000;i < this.list.length; i ++){
             if(price.equals(this.list[i].price)){
-                System.out.println("Ф.И.О.: "+this.list[i].fullName +'\n'+ "Номер: "+this.list[i].number +'\n'+ "Домашний адресс: "+this.list[i].adress + 'n'+"Сумма вклада: "+ this.list[i].price + '\n' +"На какой срок: " +this.list[i].mounth + '\n');
+                System.out.println("Ф.И.О.: "+this.list[i].fullName +'\n'+ "Номер: " + (i+1) +'\n'+ "Домашний адресс: "+this.list[i].adress + '\n'+"Сумма вклада: "+ this.list[i].price + '\n' +"На какой срок: " +this.list[i].mounth + '\n');
                 break;
             }
             else if(i == this.list.length-1){
@@ -62,7 +62,7 @@ public class Persons {
         mounth = scanner.next();
         for (int i = 12;i < this.list.length; i++){
             if (mounth.equals(this.list[i].mounth)){
-                System.out.println("Ф.И.О.: "+this.list[i].fullName +'\n'+ "Номер: "+this.list[i].number +'\n'+ "Домашний адресс: "+this.list[i].adress + 'n'+"Сумма вклада: "+ this.list[i].price + '\n' +"На какой срок: " +this.list[i].mounth + '\n');
+                System.out.println("Ф.И.О.: "+this.list[i].fullName +'\n'+ "Номер: "+ (i+1) +'\n'+ "Домашний адресс: "+this.list[i].adress + '\n'+"Сумма вклада: "+ this.list[i].price + '\n' +"На какой срок: " +this.list[i].mounth + '\n');
                 break;
             }
             else if (i == this.list.length-1){
@@ -78,7 +78,7 @@ public class Persons {
             Person person = list[surname-1];
             for (int i = surname-1; i < list.length;i++){
                 list[i] = list[i+1];
-                System.out.println("Ф.И.О.: "+this.list[i].fullName +'\n'+ "Номер: "+this.list[i].number +'\n'+ "Домашний адресс: "+this.list[i].adress + 'n'+"Сумма вклада: "+ this.list[i].price + '\n' +"На какой срок: " +this.list[i].mounth + '\n');
+                System.out.println("Ф.И.О.: "+this.list[i].fullName +'\n'+ "Номер: "+ (i+1) +'\n'+ "Домашний адресс: "+this.list[i].adress + '\n'+"Сумма вклада: "+ this.list[i].price + '\n' +"На какой срок: " +this.list[i].mounth + '\n');
                 break;
             }
             if (surname == this.list.length-1){
@@ -96,10 +96,6 @@ public class Persons {
             if (result == 1)
                 Main.Menu();
         }
-    }
-
-
-    public void add(Person иванов_иван_иванович) {
     }
 
     public void remove() {
