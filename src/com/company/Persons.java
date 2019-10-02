@@ -18,7 +18,7 @@ public class Persons {
 
 
     String fullName;
-    String price;
+    Double price;
     String mounth;
 
     public  void print(){
@@ -45,9 +45,10 @@ public class Persons {
     }
 
     public void getDataByPrice(){
-        price = scanner.next();
-        for (int i = 10000;i < this.list.length; i ++){
-            if(price.equals(this.list[i].price)){
+        System.out.println("1");
+        price = Double.parseDouble(scanner.next());
+        for (int i = 0;i < this.list.length; i ++){
+            if(price < this.list[i].price){
                 System.out.println("Ф.И.О.: "+this.list[i].fullName +'\n'+ "Номер: " + (i+1) +'\n'+ "Домашний адресс: "+this.list[i].adress + '\n'+"Сумма вклада: "+ this.list[i].price + '\n' +"На какой срок: " +this.list[i].mounth + '\n');
                 break;
             }
